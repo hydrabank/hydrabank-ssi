@@ -1,6 +1,6 @@
 <div style="display: none;">
     <div id="statusCode">
-        <!--# echo var="status" default="[???]" -->
+        <!--# echo var="status" default="502" -->
     </div>
     <div id="serverHostname">
         <!--# echo var="hostname" default="HB-SYSTEM-UNKNOWN" -->
@@ -24,6 +24,10 @@
             requestId: document.getElementById('requestId').innerText,
             dateGMT: document.getElementById('dateGMT').innerHTML
         }
+    };
+
+    if (SSI.variables.statusCode = '200') {
+        SSI.variables.statusCode = '502';
     };
     window.SSI = SSI;
 </script>
