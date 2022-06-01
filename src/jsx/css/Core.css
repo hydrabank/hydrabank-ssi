@@ -1,0 +1,11 @@
+.Header {
+  @apply text-black text-center dark:text-white font-bold text-4xl font-BreezeHeader px-5;
+}
+
+.Text {
+  @apply text-black text-center dark:text-white text-2xl font-BreezeText px-12;
+}
+
+.Button {
+  @apply text-white font-bold text-2xl font-BreezeHeader rounded-xl border-8 border-blue-600 bg-blue-600;
+}

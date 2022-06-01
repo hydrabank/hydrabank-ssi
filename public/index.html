@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/HBWaveSquare.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><!--# echo var="status" default="[???]" --> - Hydrabank CrossGuard</title>
+    <script>
+      const SSI = {
+        variables: {
+          statusCode: `<!--# echo var="status" default="[???]" -->`,
+          serverHostname: `<!--# echo var="hostname" default="HB-SYSTEM-UNKNOWN" -->`,
+          serverIp: `<!--# echo var="server_addr default="0 [Invalid - Unknown IP]" -->`,
+          requestId: `<!--# echo var="request_id" default="[???]" -->`,
+          dateGMT: `<!--# echo var="date_gmt" default="[???]" -->`
+        }
+      };
+      window.SSI = SSI;
+    </script>
+  </head>
+  <body>
+    <noscript>error <!--# echo var="status" default="[???]" --> (enable JavaScript to see the full error page)</noscript>
+    <div id="root"></div>
+  </body>
+</html>
