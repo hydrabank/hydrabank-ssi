@@ -2,7 +2,7 @@
   "name": "hydrabank-ssi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/ssi",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.7",
