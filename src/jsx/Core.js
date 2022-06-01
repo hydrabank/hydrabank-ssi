@@ -66,6 +66,10 @@ function App() {
             <p className="font-medium font-BreezeText text-md sm:text-lg md:text-xl text-white text-right break-words">
                 {match[statusCode].message}
             </p>
+            <hr className="my-4" />
+            <p className="font-medium font-BreezeText text-md sm:text-lg text-white text-right break-words">
+              <p className="font-BreezeHeader font-bold text-white">If you encounter an issue or a site in violation of our Terms of Service, contact the maintainers of CrossGuard at <a href="mailto:link@hydrabank.systems" rel="noreferrer noopener" target="_blank" className="text-blue-300">link@hydrabank.systems</a>.</p>
+            </p>
           </div>
         </div>
       </div>
