@@ -71,7 +71,7 @@ function App() {
               <p className="font-BreezeHeader font-bold text-white">If you encounter an issue or a site in violation of our Terms of Service, contact the maintainers of CrossGuard at <a href="mailto:link@hydrabank.systems" rel="noreferrer noopener" target="_blank" className="text-blue-300">link@hydrabank.systems</a>.</p>
             </p>
           </div>
-        </div>
+        </div> 
       </div>
 
       <div className="absolute bottom-0 left-0 px-8 py-6">

@@ -1,0 +1,29 @@
+<div style="display: none;">
+    <div id="statusCode">
+        <!--# echo var="status" default="[???]" -->
+    </div>
+    <div id="serverHostname">
+        <!--# echo var="hostname" default="HB-SYSTEM-UNKNOWN" -->
+    </div>
+    <div id="serverIp">
+        <!--# echo var="server_addr" default="0 [Invalid - Unknown IP]" -->
+    </div>
+    <div id="requestId">
+        <!--# echo var="request_id" default="[???]" -->
+    </div>
+    <div id="dateGMT">
+        <!--# echo var="date_gmt" default="[???]" -->
+    </div>
+</div>
+<script>
+    const SSI = {
+        variables: {
+            statusCode: document.getElementById('statusCode').innerText,
+            serverHostname: document.getElementById('serverHostname').innerText,
+            serverIp: document.getElementById('serverIp').innerText,
+            requestId: document.getElementById('requestId').innerText,
+            dateGMT: document.getElementById('dateGMT').innerHTML
+        }
+    };
+    window.SSI = SSI;
+</script>
