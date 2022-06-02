@@ -33,11 +33,11 @@
           <script>
               const SSI = {
                   variables: {
-                      statusCode: document.getElementById('statusCode').innerText,
-                      serverHostname: document.getElementById('serverHostname').innerText,
-                      serverIp: document.getElementById('serverIp').innerText,
-                      requestId: document.getElementById('requestId').innerText,
-                      dateGMT: document.getElementById('dateGMT').innerHTML
+                      statusCode: document.getElementById('statusCode').innerText.trim(),
+                      serverHostname: document.getElementById('serverHostname').innerText.trim(),
+                      serverIp: document.getElementById('serverIp').innerText.trim(),
+                      requestId: document.getElementById('requestId').innerText.trim(),
+                      dateGMT: document.getElementById('dateGMT').innerHTML.trim()
                   }
               };
           
