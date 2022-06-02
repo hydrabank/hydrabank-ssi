@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        </style>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <meta charset="utf-8" />
+        <link rel="icon" href="https://www.hydrabank.systems/assets/img/hydrabank-largest-transparent.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Oops! - Hydrabank CrossGuard</title>
+        <!--# include file="load_ssi.html" -->
+    </head>
+    <body>
+        <div>
+            <div class="h-screen w-screen flex justify-center content-center md:content-end flex-col gap-y-6 flex-wrap bg-gradient-to-r from-sky-300 via-sky-500 to-blue-700">
+              <div class="flex flex-row">
+                <div class="px-10 py-10 bg-gray-900 rounded-3xl mx-16 sm:mx-32 flex flex-col gap-y-2 flex-wrap content-end lg:w-[48rem]">
+                  <h1 class="font-bold font-[Inter] text-2xl text-white text-right">Error: <span style="font-family: 'Space Mono', monospace;" id="statusCodeText"></span> - <span id="taglineText"></span></h1>
+                  <p class="font-medium font-[Inter] text-md sm:text-lg md:text-xl text-white text-right break-words" id="statusCodeMessageText">
+                  </p>
+                  <hr class="my-4" />
+                  <p class="class-medium font-[Inter] text-md sm:text-lg text-white text-right break-words">
+                    <p class="font-[Inter] font-bold text-white">If you encounter an issue or a site in violation of our Terms of Service, contact the maintainers of CrossGuard at <a href="mailto:link@hydrabank.systems" rel="noreferrer noopener" target="_blank" className="text-blue-300">link@hydrabank.systems</a>.</p>
+                  </p>
+                </div>
+              </div> 
+            </div>
+      
+            <div class="absolute bottom-0 left-0 px-8 py-6">
+              <a href="https://hydrabank.systems" target="_blank" rel="noreferrer">
+                <img src="https://www.hydrabank.systems/assets/img/hydrabank-largest-transparent.png" width="64px" alt="Wave" />
+              </a>
+            </div>
+        </div>
+
+        <script>
+            const statusCode = window.SSI.variables.statusCode;
+            if (!window.matchStatus[statusCode]) window.matchStatus[statusCode] = {
+                tagline: "Unknown Error",
+                message: "The server reported an error that CrossGuard was unable to identify! 😱 Not to worry, though! 😊 Just contact the webmaster 🧑 in order to find out the meaning of the error.",
+            };
+            document.getElementById("statusCodeMessageText").innerHTML = window.matchStatus[statusCode].message;
+            document.getElementById("statusCodeText").innerHTML = statusCode;
+            document.getElementById("taglineText").innerHTML = window.matchStatus[statusCode].tagline;
+        </script>
+    </body>
+</html>
