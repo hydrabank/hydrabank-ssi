@@ -12,7 +12,93 @@
         <link rel="icon" href="https://www.hydrabank.systems/assets/img/hydrabank-largest-transparent.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Oops! - Hydrabank CrossGuard</title>
-        <!--# include virtual="/load_ssi.html" -->
+        <!-- START SSI STUFF -->
+          <div style="display: none;">
+            <div id="statusCode">
+                <!--# echo var="status" default="502" -->
+            </div>
+            <div id="serverHostname">
+                <!--# echo var="hostname" default="HB-SYSTEM-UNKNOWN" -->
+            </div>
+            <div id="serverIp">
+                <!--# echo var="server_addr" default="0 [Invalid - Unknown IP]" -->
+            </div>
+            <div id="requestId">
+                <!--# echo var="request_id" default="[???]" -->
+            </div>
+            <div id="dateGMT">
+                <!--# echo var="date_gmt" default="[???]" -->
+            </div>
+          </div>
+          <script>
+              const SSI = {
+                  variables: {
+                      statusCode: document.getElementById('statusCode').innerText,
+                      serverHostname: document.getElementById('serverHostname').innerText,
+                      serverIp: document.getElementById('serverIp').innerText,
+                      requestId: document.getElementById('requestId').innerText,
+                      dateGMT: document.getElementById('dateGMT').innerHTML
+                  }
+              };
+          
+              if (SSI.variables.statusCode = '200') {
+                  SSI.variables.statusCode = '0';
+              };
+              window.SSI = SSI;
+          
+              const match = {
+                  69: {
+                      tagline: "Nice.",
+                      message: "😼😼😼😼",
+                  },
+                  200: {
+                      tagline: "OK.",
+                      message: "How the hell did you get this as an error?!?!?!"
+                  },
+                  400: {
+                      tagline: "Bad Request",
+                      message: "The server reported a user-side error! 😱 Try to fix certain variables in your request 🧮, or check that your request is valid ✅. Otherwise, contact the webmaster 🧑.",
+                  },
+                  401: {
+                      tagline: "Unauthenticated Access?",
+                      message: "You are not authorized to access this page! 🤔 You're probably not authenticated 🗳️, so log in first 🔐, or contact the webmaster for further assistance 🧑.",
+                  },
+                  403: {
+                      tagline: "Forbidden (Access Denied)",
+                      message: "You are not authorized to access this page! 😱 You probably don't have access to this service ❌, so contact the webmaster for further assistance 🧑.",
+                  },
+                  404: {
+                      tagline: "Not Found",
+                      message: "The page that you were looking for wasn't found. 🤔 Maybe you've mistyped the address 🌎, or perhaps the page 💻 was moved? 🤔"
+                  },
+                  418: {
+                      tagline: "I'm a teapot",
+                      message: "I'm a teapot 🫖. That's all there is to it."
+                  },
+                  420: {
+                      tagline: "Calming. Nice.",
+                      message: "The server could be under heavy load 🔥, or maybe it's having a quick break for relaxation 🛀. Please try again in a few minutes 🕑. If the problem persists, contact the webmaster 🧑."
+                  },
+                  500: {
+                      tagline: "Internal Server Error",
+                      message: "The server reported an error within itself! 😱 Ensure that your request is valid ✅. If it is, and the error still occurs, contact the webmaster for further assistance 🧑.",
+                  },
+                  502: {
+                      tagline: "Bad Gateway",
+                      message: "CrossGuard reported that the response from the gateway was invalid! 😱 This usually means that CrossGuard isn't configured with the address that you're trying to get to 😕. Contact the webmaster 🧑 for further assistance.",
+                  },
+                  503: {
+                      tagline: "Service Unavailable",
+                      message: "CrossGuard reported that the service is unavailable! 😱 The server that CrossGuard is trying to connect to is probably offline 🔌. Contact the webmaster 🧑 for further assistance.",
+                  },
+                  504: {
+                      tagline: "Gateway Timeout",
+                      message: "CrossGuard reported that the gateway timed out! 😱 This is probably an issue with the software that the website's server uses ⚠️. Contact the webmaster 🧑 for further assistance.",
+                  }
+              };
+              window.matchStatus = match;
+          </script>
+        <!-- END SSI STUFF -->
     </head>
     <body>
         <div>
